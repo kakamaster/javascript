@@ -7,6 +7,7 @@
 		window.onscroll = function(){
 			var H=0;  //初始化H为0
 			var H= document.documentElement.scrollTop||document.body.scrollTop;
+			
 			//var H=0;    *笔记：如果写在这里，则是在获取scrollTop的值之后,依然设定H的值为0，会覆盖else里面的结果
 			var demo= document.getElementById('demo');
 			if(H<=110){

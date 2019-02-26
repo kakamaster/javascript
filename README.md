@@ -1,2 +1,2 @@
 # Javascript
-笔记
+学习笔记

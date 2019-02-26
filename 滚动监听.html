@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript">
+		window.onscroll = function(){
+			var H=0;
+			var H= document.documentElement.scrollTop||document.body.scrollTop;
+			var demo= document.getElementById('demo');
+			if(H<=110){
+				demo.style.backgroundColor='rgba(255,255,255,0)';
+			}
+			else{
+				demo.style.backgroundColor='yellow';
+			}
+		}
+	</script>	
+	</head>
+	<body>
+		<div id="demo" style="width: 600px;height: 100px;position: fixed;background-color: rgba(255,255,255,0);">
+		
+			hahahh 
+		</div>
+		<div id="kk" style="height: 5000px;"></div>
+	</body>
+</html>

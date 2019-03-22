@@ -3,22 +3,75 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-	<script>
-		var fruits = new Array("apple","orange","banana");
-		for(var i=0;i<fruits.length;i++){
-			console.log(fruits[i]);
+	<style>
+		.hide{
+			color: yellow;
+			font-size: 28px;
+		/*	display: none;*/
 		}
+		.block{
+			color: cornflowerblue;
+		}
+		.content li{
+			width: 200px;
+			height: 100px;
+			background-color:red ;
+			list-style: none;
+			margin: 20px;
+			float: left;
+		}
+	</style>		
+	<script type="text/javascript">
+//		var fruits = new Array("apple","orange","banana");
+//		for(var i=0;i<fruits.length;i++){
+//			console.log(fruits[i]);
+//		}
 		
-		var S=document.getElementById('fruit').document.getElementsByClassName('div');
-		S[0].style.color='red'
-		
-	</script>	
+		function demo()
+		{
+			li= document.getElementById('b');
+			name = document.getElementById('a').className;
+			if(name!=='apple'){
+				li.classList.add('hide');
+			}else{
+				li.classList.remove('hide');
+			}
+		};
+		function demo2(){
+			li= document.getElementById('b2');
+			name = document.getElementById('a').className;
+			if(name!=='orange'){
+				li.classList.add('hide');
+			}else{
+				li.classList.remove('hide');
+			}
+		}
+		function demo3(){
+			li= document.getElementById('b3');
+			name = document.getElementById('a').className;
+			if(name!=='banana'){
+				li.classList.add('hide');
+			}else{
+				li.classList.remove('hide');
+			}
+		}
+
+	</script>		
+	
+	
 	</head>
 	<body>
 		<div id="fruit">
-			<button class="apple item">apple</button>
-			<button class="orange item">orange</button>
-			<button class="banana item">banana</button>
+			<button class="apple" onclick="demo()">apple</button>
+			<button class="orange" onclick="demo2()">orange</button>
+			<button class="banana" onclick="demo3()">banana</button>
+		</div>
+		<div class="content" id="a" >
+			<ul>
+				<li id="b" >apple</li>
+				<li id="b2">orange</li>
+				<li id="b3">banana</li>
+			</ul>
 		</div>
 	</body>
 </html>

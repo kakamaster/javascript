@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script>
+        function(){
+            var xmlhttp;
+            if(window.XMLHttpRequest){
+                xmlhttp=new XMLHttpRequest();
+            }else{
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function(){
+                if(xmlhttp,readyState==4&&xmlhttp.status==200)
+                {
+                    document.getElementById("mydiv").innerHTML=xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET","/ajax/demo_get.asp",true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="loadXMLDoc()">点我</button>
+    <div id="mydiv"></div>
+</body>
+</html>

@@ -154,7 +154,7 @@ $("#lunbobox ul li").click(function() {
         "background": "#cccccc"
     })
     var index = $(this).index(); //获取索引 图片索引与按钮的索引是一一对应的
-    // console.log(index);
+       console.log(index);
 
     $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）
 });

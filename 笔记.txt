@@ -1,0 +1,12 @@
+classList属性返回元素类名，作为DOMTokenList对象
+该属性用于在元素中添加，移除及切换CSS类。
+classList属性是只读的，但你可以使用add()和remove()方修改他
+语法：element.classList
+方法：add(class1,class2,.....)  在元素中添加一个或多个类名
+      contains(class)    返回布尔值，判断你指定的类名是否存在  true-元素包含了该类名  false-元素中不存在该类名
+      remove(class1,class2,....)  移除元素中一个或多个类名 注意：移除不存在的类名，不会报错
+      toggle(class,true|false)   在元素中切换类名   class：为要在元素中移除的类名，并返回false，如果该类名不存在，则添加类名，并返回true
+						    第二个是可选参数，是个布尔值用于设置元素是否强制添加或移除类，不管该类是否存在
+							移除一个 class: element.classList.toggle("classToRemove", false); 
+							添加一个 class: element.classList.toggle("classToAdd", true);
+item(index) 返回元素中索引值对应的类名，索引值从0开始，如果索引值在区间范围外则返回 null

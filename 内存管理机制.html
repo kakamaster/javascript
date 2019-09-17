@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 创建字符串时自动分配内存，运行后自动释放内存 -->
+    <script>
+        let arr = new Array();
+        //队列 先进先出
+        arr.unshift(1);
+        arr.unshift(2);
+        arr.unshift(3);
+        arr.pop();
+        // console.log(arr);
+
+        //堆栈 先进后出
+        let arr2 =new Array();
+        arr2.push(1);
+        arr2.push(2);
+        arr2.push(3);
+        arr2.pop();
+        // console.log(arr2);
+
+        //面试题
+        let a= 10;
+        let b= a;
+        b=20;
+        // console.log(a);
+        let obj ={aa:20,bb:30};
+        let obk = obj;
+        obk.aa = 10;
+        console.log(obj.aa)
+    </script>
+</body>
+</html>

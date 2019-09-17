@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），
+        // 在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；
+        // reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），
+        // 在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去
+        function test(resolve, reject){
+            var timeOut = Math.random() * 2;
+            log('set times to:' + timeOut + 'seconds');
+            setTimeout(function(){
+                if(timeOut < 1){
+                    log('call resolve()...');
+                    resolve('200 OK');
+                }else{
+                    log('call reject()...');
+                    reject('timeout in' + timeOut +'seconds')
+                }
+            },timeOut * 1000);
+        }
+    </script>
+</body>
+</html>

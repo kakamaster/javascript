@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节流函数</title>
+    <style>
+        #box{
+            width: 1000px;
+            height: 500px;
+            background: #ccc;
+            font-size:40px;
+            text-align: center;
+            line-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        // 节流的意思是让函数有节制地执行，而不是毫无节制的触发一次就执行一次。什么叫有节制呢？就是在一段时间内，只执行一次
+        function throttle(func,delay){
+            let run = true
+            return function(){
+                if(!run){
+                    return//如果开关关闭了，那就直接不执行下边的代码
+                }
+                run = false//持续触发的话，run一直是false,就会停在上边的判断那里
+                setTimeout(()=>{
+                    func.apply(this,arguments)
+                    run = true
+                },delay)
+            }
+        }
+
+        box.onmouseover = throttle(function(e){
+            box.innerHTML = `${e.clientX},${e.clientY}`
+        },1000)
+    </script>
+</body>
+</html>

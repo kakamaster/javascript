@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>https://www.cnblogs.com/zhaoxiaoying/p/9031890.html</h1>
+   <p> 一、var声明的变量会挂载在window上，而let和const声明的变量不会：</p>
+    <script>
+        var a = 100;
+        console.log(a,window.a);    // 100 100
+
+        let b = 10;
+        console.log(b,window.b);    // 10 undefined
+
+        const c = 1;
+        console.log(c,window.c);    // 1 undefined
+    </script>
+
+    <p>二、var声明变量存在变量提升，let和const不存在变量提升</p>
+    <script>
+        console.log(a); // undefined  ===>  a已声明还没赋值，默认得到undefined值
+        var a = 100;
+        console.log(b); // 报错：b is not defined  ===> 找不到b这个变量
+        let b = 10;
+        console.log(c); // 报错：c is not defined  ===> 找不到c这个变量
+        const c = 10;
+    </script>
+
+    <P>三、let和const声明形成块作用域</P>
+    <script>
+        if(1){
+            var a = 100;
+            let b = 10; 
+        }
+
+        console.log(a); // 100
+        console.log(b)  // 报错：b is not defined  ===> 找不到b这个变量
+
+
+        if(1){
+
+            var a = 100;
+                
+            const c = 1;
+            }
+            console.log(a); // 100
+            console.log(c)  // 报错：c is not defined  ===> 找不到c这个变量
+    </script>
+
+    <p>四、同一作用域下let和const不能声明同名变量，而var可以</p>
+    <script>
+        var a = 100;
+        console.log(a); // 100
+
+        var a = 10;
+        console.log(a); // 10
+        let a = 100;
+        let a = 10;
+
+        //  控制台报错：Identifier 'a' has already been declared  ===> 标识符a已经被声明了。
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 1.将一个类数组对象或者可遍历对象转换成一个真正的数组</h1>
+    <!-- 类数组对象：具有length属性的对象 -->
+
+    <!-- 以下是将类数组对象转换为真正的数组 -->
+    <script>
+        let arrayLike={
+            0:'tom',
+            1:'65',
+            2:'男',
+            3:['jane','john','Marry'],
+            'length':4
+        };
+        let arr = Array.from(arrayLike);
+        console.log(arr)
+
+        // 如果将上面的length属性去掉，答案会是一个长度为0的空数组
+    </script>
+
+    <script>
+        // 将这里代码改一下，具有length属性，但是对象的属性不再是数字类型，而是其他字符串类型
+        let arrayLike2={
+            'name':'tom',
+            'age':'88',
+            'sex':'男',
+            'frtends':['jane','jhon','Marry'],
+            length:4
+        }
+        let arr2 = Array.from(arrayLike2)
+        console.log(arr2)
+    </script>
+    <!-- 因此将一个类数组对象转换成一个真正的数组，需要以下条件
+        1.该类数组对象必须有length属性，用于指定数组长度。如果没有length属性，那么转换后的数组是一个空数组
+        2.该类数组对象的属性名必须为数值型或者字符串型的数字（该类数组对象的属性名可以加引号，也可以不加，结果没有影响）
+    -->
+
+
+    <h1>2.将set结构的数组转换成真正的数组</h1>
+    <script> 
+        let arr3 = [12,45,97,9797,564,134,34546];
+        let set = new Set(arr3)
+        console.log(set)
+        console.log(Array.from(set)) 
+
+        // Array.from还可以接收第二个参数，作用类似于数组map的方法，用来对每个元素进行处理，将处理后的值放入返回的数组
+        console.log(Array.from(set, item =>item + 1))
+    </script>
+
+    <!-- 这里的几个arr不要写一样的，否则报错Uncaught SyntaxError: Identifier 'arr' has already been declaredat -->
+
+    <h1>3.将字符串转换为数组</h1>
+    <script>
+        // 第一种方法
+        let str = 'hello world!';
+        console.log(Array.from(str))
+
+        // 第二种方法
+        console.log(str.split(''))
+    </script>
+
+    <h1>4.Array.from参数是一个真正的数组</h1>
+    <script>
+        console.log(Array.from([12,13,14,15,56,567,577]))
+        // 像这种情况，Array.from会返回一个一摸一样的数组
+    </script>
+</body>
+</html>

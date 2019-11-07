@@ -15,5 +15,15 @@
         setTimeout(callback,1000);//一秒钟后调用callback函数
         console.log('after setTimeout()');
     </script>
+
+    <script>
+        new Promise(resolve =>{
+            setTimeout(() => {
+                resolve('hello')
+            },2000)
+        }).then(res => {
+            console.log(res)
+        })
+    </script>
 </body>
 </html>
